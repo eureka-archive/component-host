@@ -1,5 +1,5 @@
 {
-  "name": "eureka/component-hpst",
+  "name": "eureka/component-host",
   "description": "PHP host library.",
   "type": "library",
   "license": "MIT",
