@@ -13,43 +13,31 @@ namespace Eureka\Component\Host;
  * Host class.
  *
  * @author Romain Cottard
- * @version 2.1.0
  */
 class Host
 {
-
     /**
-     * Current class instance.
-     *
-     * @var Host $instance
+     * @var Host $instance Current class instance.
      */
     protected static $instance = null;
 
     /**
-     * Config instance.
-     *
-     * @var \Eureka\Component\Config\Config $config
+     * @var \Eureka\Component\Config\Config $config Config instance.
      */
     protected $config = null;
 
     /**
-     * Namespace for config object.
-     *
-     * @var string $namespace
+     * @var string $namespace Namespace for config object.
      */
     protected $namespace = '';
 
     /**
-     * Base server uri.
-     *
-     * @var string $baseUri
+     * @var string $baseUri Base server uri.
      */
     protected $baseUri = '';
 
     /**
      * Host constructor.
-     *
-     * @return Host
      */
     protected function __construct()
     {
@@ -64,7 +52,7 @@ class Host
     public function getInstance()
     {
         if (null === static::$instance) {
-            $className = get_called_class();
+            $className        = get_called_class();
             static::$instance = new $className();
         }
 
@@ -74,8 +62,8 @@ class Host
     /**
      * Get host data.
      *
-     * @param    string $name
-     * @return   mixed   Data information
+     * @param  string $name
+     * @return mixed   Data information
      */
     public function get($name)
     {
@@ -85,9 +73,9 @@ class Host
     /**
      * Get uri
      *
-     * @param    string $name
-     * @param    string $baseUri
-     * @return   string
+     * @param  string $name
+     * @param  string $baseUri
+     * @return string
      */
     public function uri($name, $baseUri = null)
     {
@@ -113,11 +101,11 @@ class Host
     }
 
     /**
-     * Initialize host datas.
+     * Initialize host data.
      *
-     * @param    \Eureka\Component\Config\Config $config
-     * @param   string $namespace Namespace for config
-     * @return  Host
+     * @param  \Eureka\Component\Config\Config $config
+     * @param  string $namespace Namespace for config
+     * @return self
      */
     public function setConfig($config, $namespace = 'host')
     {
@@ -126,5 +114,4 @@ class Host
 
         return $this;
     }
-
 }
